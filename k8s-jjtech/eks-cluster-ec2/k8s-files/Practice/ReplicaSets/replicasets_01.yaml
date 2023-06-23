@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp-replicaset
+  namespace: dev1
+  labels:
+    app: myapp
+    run: nginx
+spec:
+  # modify replicas according to your case
+  replicas: 5
+  selector:    # Required field in Replicaset
+    matchLabels:
+      run: nginx
+      app: myapp
+  template:
+    metadata:
+      labels:
+        run: nginx
+        app: myapp
+    spec:
+      containers:
+      - name: myapp
+        image: nginx
+        ports:
+        - name: web
+          containerPort:  80
+          protocol: TCP
+        env:
+        - name: NGX_VERSION
+          value: 1.16.1
+        

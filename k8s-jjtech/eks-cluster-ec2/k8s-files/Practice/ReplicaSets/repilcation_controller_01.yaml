@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: my-rep-ctrl
+  labels:
+    app: myapp
+    run: nginx
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      run: nginx
+  template:  # Pod definition template
+    metadata:
+      name: myapp-pod
+      labels:
+        run: nginx
+    spec:
+      containers:
+        - name: myapp
+          image: nginx
+          ports:
+            - containerPort: 80
