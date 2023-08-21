@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # k8s-jjtech
 
 ## Deploy EKS CLuster with Fargate using Terraform
@@ -112,3 +113,6 @@ To install the latest minikube stable release on x86-64 Windows using Chocolatey
 
 3. STart intercating with your cluster by running 
 - kubectl get po
+=======
+# K8s-App-Depl-eks-ecr
+>>>>>>> b336c15daf1788f7ef96fc13336f49f433eaaef8
